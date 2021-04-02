@@ -1,0 +1,141 @@
+.cartfull {
+  display: grid;
+  position: relative;
+  top: 110px;
+  grid-template-columns: 70% 30%;
+}
+
+.totalcart {
+  margin-top: 60px;
+  height: 250px;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.totalcart .totalprice {
+  margin-right: 10px;
+  justify-self: flex-end;
+  font-weight: 500;
+}
+.checkoutbtn {
+  width: 80%;
+  grid-column: 1/3;
+  justify-self: center;
+  background-color: #0071dc;
+  color: rgb(255, 255, 255);
+  border-radius: 30px;
+  outline-style: none;
+  height: 40px;
+  transition: all 0.5s linear;
+  font-weight: 500;
+}
+.checkoutbtn:hover {
+  background-color: #0958a1;
+}
+.productcart {
+  display: grid;
+  height: 190px;
+  grid-template-columns: 20% 40% 20% 20%;
+  margin: 30px 8px;
+  border-bottom: 2px solid #0958a1;
+  /* box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5); */
+  column-gap: 5px;
+}
+.Emptycart {
+  position: relative;
+  top: 70px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.illustration {
+  position: relative;
+  right: 200px;
+  transform: scale(0.5);
+}
+.arrow {
+  display: inline;
+}
+.textempty {
+  align-self: center;
+  justify-self: center;
+  font-size: 30px;
+}
+.textempty h1 {
+  font-weight: 600;
+}
+.textempty .goshop {
+  transition: all 0.5s linear;
+  opacity: 0.7;
+}
+.textempty .goshop:hover {
+  opacity: 1;
+}
+.imagecart {
+  display: flex;
+  height: 190px;
+  overflow: hidden;
+  justify-content: center;
+}
+.productname {
+  margin-top: 8px;
+  height: max-content;
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.1s ease-in-out;
+  margin-bottom: 10px;
+}
+.qtyoption {
+  margin-top: 8px;
+  height: max-content;
+  width: fit-content;
+  font-size: 20px;
+}
+.sandh {
+  margin-top: 70px;
+  opacity: 0.5;
+}
+.qtyoption h2 {
+  margin-top: 20px;
+  font-size: 15px;
+}
+.deletecart {
+  justify-self: flex-end;
+  margin-right: 20px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.deletecart:hover {
+  transition: all 1s ease-in-out;
+  color: #dd4141;
+}
+.priceproduct {
+  font-size: 18px;
+}
+.productname:hover {
+  border-bottom: solid 2px #1e1e1e;
+}
+.cart h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 30px;
+}
+.productsoncart {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .productcart {
+    margin: 10px 0;
+    grid-template-columns: 30% 40% 10% 20%;
+  }
+  .productsoncart {
+    width: 100%;
+  }
+  .sandh {
+    margin-top: 40px;
+    opacity: 0.5;
+  }
+  .cartfull {
+    grid-template-columns: 1fr;
+  }
+}

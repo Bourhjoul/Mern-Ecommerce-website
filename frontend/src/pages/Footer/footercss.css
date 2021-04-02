@@ -1,0 +1,126 @@
+footer {
+  margin-top: 120px;
+  height: 450px;
+
+  display: grid;
+  grid-gap: 10px;
+
+  grid-template-columns: repeat(auto-fit, minmax(23%, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(1fr, 50px));
+  row-gap: 8px;
+
+  background-color: #252525;
+  justify-items: center;
+}
+
+footer h1 {
+  text-transform: uppercase;
+  padding-top: 40px;
+  margin: 35px 0px;
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+}
+
+footer li {
+  margin-top: 15px;
+  list-style: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  margin-right: 0px;
+  color: #808080;
+}
+footer p {
+  color: white;
+  font-size: 14px;
+  color: #808080;
+}
+.footerIcons {
+  display: inline-block;
+  margin-top: 40px;
+  margin-right: 30px;
+  transition: all 0.5s linear;
+}
+.footerIcons:hover {
+  color: #fff;
+}
+.footerBtn {
+  border: 0px solid black;
+  border-radius: 35px;
+  background-color: #1e1e2c;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  color: white;
+  outline-style: none;
+  transition: all 0.5s Linear;
+}
+.footerCategorie li:hover,
+.fooHelp li:hover {
+  transition: all 0.5s Linear;
+
+  color: #fff;
+}
+.footerBtn:hover {
+  color: #1e1e2c;
+  background-color: white;
+}
+
+.creditsIcons {
+  display: grid;
+  padding: 0;
+  margin: 0;
+
+  grid-column: 5/1;
+}
+footer .paragraphFooter {
+  color: #808080;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: #808080;
+  grid-column: 5/1;
+  margin-top: 30px;
+  justify-items: center;
+}
+.paragraphFooter p {
+  grid-column: 1/4;
+  justify-self: center;
+}
+.paragraphFooter > *:hover {
+  transition: all 0.5s linear;
+
+  color: #fff;
+}
+.creditsIcons ul {
+  display: flex;
+
+  height: 1px;
+  width: 100%;
+}
+
+.creditsIcons ul li img {
+  width: 50px;
+  height: 30px;
+  border-radius: 10%;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    display: block;
+    height: auto;
+  }
+
+  footer .paragraphFooter {
+    margin-top: 70px;
+    text-align: center;
+  }
+  .creditsIcons {
+    margin: 0 30px;
+  }
+  footer div {
+    margin: 0 30px;
+  }
+}
