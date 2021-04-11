@@ -5,7 +5,7 @@ import { addToCart } from '../../actions/cartActions';
 import Empty from '../../components/Empty';
 import Productoncart from '../../components/Productoncart';
 import './cartcss.css'
-const Cartpage = ({match,location}) => {
+const Cartpage = ({match,location,history}) => {
     const [totalqty, settotalqty] = useState(0)
 
     const [total, settotal] = useState(0)
@@ -22,6 +22,10 @@ const Cartpage = ({match,location}) => {
 
             dispatch(addToCart(id,qty))}
     },[dispatch,id,qty])
+
+    const checkoutHandler =()=>{
+        history.push('./login?redirect=shipping');
+    }
 
     return (
         <>
@@ -75,7 +79,7 @@ const Cartpage = ({match,location}) => {
 
              ).toFixed(2)}$
             </h3>
-            <button className = 'checkoutbtn'>
+            <button className = 'checkoutbtn' disabled={cartItems.length===0} onClick={checkoutHandler}>
             CHECKOUT
             </button>
         </div>

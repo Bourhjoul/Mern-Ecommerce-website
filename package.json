@@ -55,6 +55,7 @@
     "jsesc": "^2.5.2",
     "json-parse-even-better-errors": "^2.3.1",
     "json5": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
     "lines-and-columns": "^1.1.6",
     "lodash": "^4.17.21",
     "lodash.mergewith": "^4.6.2",

@@ -1,8 +1,10 @@
 import React , {useRef,useState,useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import {Link, NavLink } from 'react-router-dom'
 import { Input,InputGroup,InputRightElement} from "@chakra-ui/react"
-import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight} from "react-icons/all"
-import { useSelector } from 'react-redux'
+import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight,BsBoxArrowInDown,FiSettings} from "react-icons/all"
+
+import {logout} from '../actions/userActions'
 
  const Nav = () => {
     const [incart,setincart] = useState(0);
@@ -79,6 +81,15 @@ import { useSelector } from 'react-redux'
                 
             }
         },)
+
+
+        const dispatch= useDispatch()
+        const userLogin = useSelector(state => state.userLogin)
+        const {userInfo} = userLogin
+        
+        const logoutHandler = () => {
+            dispatch(logout())
+        }
     
     return (
        <nav ref = {Nav}  className={`nav ${nav ? 'active' : ''}`} >
@@ -107,9 +118,16 @@ import { useSelector } from 'react-redux'
                 <div className = 'dotcart'>
                               {incart}   
                             </div> </Link>
-            <div className='signin' onMouseOver={ () => setSignin(!signin)}  onMouseOut={ ()=> setSignin(!signin) }  > Sign in 
-                { !signin ? <BsArrowRightShort  size='25'/>  : <MdKeyboardArrowRight size='25'  /> }
-            </div>
+
+                            {userInfo ? (<div className="ic_sett_dis"><Link to="/profile"><FiSettings size="25" className="settingIcon"/></Link>
+                                <BsBoxArrowInDown size='25' className="displayIcon" onClick={logoutHandler}/>
+                                </div>
+                                
+                            ) : <Link to='/login' > <div className='signin' onMouseOver={ () => setSignin(!signin)}  onMouseOut={ ()=> setSignin(!signin) }  > Sign in 
+                            { !signin ? <BsArrowRightShort  size='25'/>  : <MdKeyboardArrowRight size='25'  /> }
+                        </div>
+                        </Link>}
+            
         </div>
        </nav>
     )                   
