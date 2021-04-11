@@ -2,7 +2,7 @@ import React , {useRef,useState,useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {Link, NavLink } from 'react-router-dom'
 import { Input,InputGroup,InputRightElement} from "@chakra-ui/react"
-import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight,BsBoxArrowInDown,FiSettings} from "react-icons/all"
+import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight,IoLogOutOutline,CgProfile} from "react-icons/all"
 
 import {logout} from '../actions/userActions'
 
@@ -119,8 +119,8 @@ import {logout} from '../actions/userActions'
                               {incart}   
                             </div> </Link>
 
-                            {userInfo ? (<div className="ic_sett_dis"><Link to="/profile"><FiSettings size="25" className="settingIcon"/></Link>
-                                <BsBoxArrowInDown size='25' className="displayIcon" onClick={logoutHandler}/>
+                            {userInfo ? (<div className="ic_sett_dis"><Link to="/profile"><CgProfile size="25" className="settingIcon"/></Link>
+                                <IoLogOutOutline size='28' className="displayIcon" onClick={logoutHandler}/>
                                 </div>
                                 
                             ) : <Link to='/login' > <div className='signin' onMouseOver={ () => setSignin(!signin)}  onMouseOut={ ()=> setSignin(!signin) }  > Sign in 

@@ -13,6 +13,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap :7rem;
     padding: 0 2rem;
+    
 }
 
 .imga{
@@ -195,6 +196,8 @@ form{
 
 .ic_sett_dis{
   display: flex;
+  margin-left: 10px;
+
 }
 
 .createAcc{
@@ -216,3 +219,46 @@ form{
   margin-bottom: 30px;
   font-weight: 650;
 }
+
+
+@media screen and (max-width: 1050px){
+	.containera{
+		grid-gap: 5rem;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	form{
+		width: 290px;
+	}
+
+	.login-content h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+	}
+
+	.imga img{
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.containera{
+		grid-template-columns: 1fr;
+        
+	}
+
+	.imga{
+		display: none;
+	}
+
+	.wave{
+		display: none;
+	}
+
+	.login-content{
+		justify-content: center;
+	}
+}
+
+
