@@ -22,7 +22,7 @@ const Users = [
         name : 'John Doe',
         email : 'JohnDoe2@gmail.com',
         password : bcrypt.hashSync('doe2020',12),
-        
+        isAdmin : false
     }
     
 ]

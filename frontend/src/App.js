@@ -6,11 +6,14 @@ import Contactus from './pages/Contactus/Contactus'
 import Productpage from './pages/Product/Productpage'
 import Cartpage from './pages/Cart/Cartpage'
 import Footer from './pages/Footer/Footer'
+import LoginScreen from './pages/Login/LoginScreen'
 import React, {useState,useEffect} from 'react'
 import {BrowserRouter as Router , Switch ,Route } from 'react-router-dom'
 import { ChakraProvider } from "@chakra-ui/react"
 import ScrollIntoView from "./components/Scrollintoview";
 import HashLoader from "react-spinners/HashLoader";
+import RegisterScreen from './components/RegisterScreen'
+import ProfileScreen from './components/ProfileScreen'
 
 
  const App = () => { 
@@ -42,6 +45,10 @@ import HashLoader from "react-spinners/HashLoader";
                  <Route path="/contactus" component={Contactus}/>
                  <Route path="/product/:id" component={Productpage}/>
                  <Route path="/cart/:id?" component={Cartpage}/>
+                 <Route path="/login" component={LoginScreen}/>
+                 <Route path="/register" component={RegisterScreen}/>
+                 <Route path="/profile" component={ProfileScreen}/>
+
                  </Switch>
                  <Footer/>
           </>

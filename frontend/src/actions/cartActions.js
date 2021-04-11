@@ -9,7 +9,7 @@ console.log(data)
     payload: {
       product: data._id,
       name: data.name,
-      images: data.image,
+      images: data.images,
       price: data.price,
       countInStock: data.countInStock,
       qty,
