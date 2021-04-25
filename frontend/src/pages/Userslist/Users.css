@@ -1,0 +1,17 @@
+.Users {
+  /* display: grid; */
+  position: relative;
+  top: 70px;
+  height: max-content;
+  margin: 20px;
+  /* grid-template-columns: minmax(200px, 1fr); */
+}
+
+.titlepanel {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tableusers {
+  background-color: rgb(250, 250, 250);
+}

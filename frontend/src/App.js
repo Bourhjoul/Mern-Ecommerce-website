@@ -14,6 +14,15 @@ import ScrollIntoView from "./components/Scrollintoview";
 import HashLoader from "react-spinners/HashLoader";
 import RegisterScreen from './components/RegisterScreen'
 import ProfileScreen from './components/ProfileScreen'
+import Checkout from "./pages/checkout/Checkout";
+import Placeorder from './pages/placeorder/Placeorder'
+import Order from './pages/Order/Order'
+import Users from './pages/Userslist/Users'
+import NotFoundPage from './components/Notfoundpage'
+import Edituser from './pages/Useredit/Edituser'
+import Products from './pages/products/products'
+import Editproduct from './pages/Editproduct/Editproduct'
+import Orders from './pages/Orders/Orders'
 
 
  const App = () => { 
@@ -33,7 +42,7 @@ import ProfileScreen from './components/ProfileScreen'
          <ScrollIntoView>
          {loading ?   
             <div className='loading'>
-                 <HashLoader   color={"#fff"}  loading={loading} size={40} />
+                 <HashLoader   color={"#1e1e2c"}  loading={loading} size={40} />
             </div>
           :
          <>
@@ -48,6 +57,23 @@ import ProfileScreen from './components/ProfileScreen'
                  <Route path="/login" component={LoginScreen}/>
                  <Route path="/register" component={RegisterScreen}/>
                  <Route path="/profile" component={ProfileScreen}/>
+                 <Route path="/shipping" component={Checkout}/>
+                 <Route path="/placeorder" component={Placeorder}/>
+                 <Route path="/order/:id" component={Order}/>
+                 <Route path="/admin/userlist" component={Users}/>
+                 <Route path="/admin/productlist" component={Products}/>
+                 <Route path="/admin/orderlist" component={Orders}/>
+                 <Route path="/search/:keyword" component={Shop}/>
+
+                 <Route path="/admin/user/:id/edit" component={Edituser}/>
+                 <Route path="/admin/product/:id/edit" component={Editproduct}/>
+
+                 
+                 <Route component={NotFoundPage} />
+
+
+
+
 
                  </Switch>
                  <Footer/>

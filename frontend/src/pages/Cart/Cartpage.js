@@ -1,14 +1,12 @@
 import React from 'react'
 import { useEffect,useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useDispatch,useSelector } from 'react-redux';
 import { addToCart } from '../../actions/cartActions';
 import Empty from '../../components/Empty';
 import Productoncart from '../../components/Productoncart';
 import './cartcss.css'
 const Cartpage = ({match,location,history}) => {
-    const [totalqty, settotalqty] = useState(0)
-
-    const [total, settotal] = useState(0)
     const {id} = match.params;
     const qty = location.search ? Number(location.search.split('=')[1]) : 1
     const dispatch = useDispatch();
@@ -18,8 +16,6 @@ const Cartpage = ({match,location,history}) => {
     useEffect(()=>{
 
         if(id){
-            settotalqty(prevtotalqty=> prevtotalqty +total)
-
             dispatch(addToCart(id,qty))}
     },[dispatch,id,qty])
 
@@ -29,6 +25,9 @@ const Cartpage = ({match,location,history}) => {
 
     return (
         <>
+        <Helmet>
+            <title>Cart</title>
+        </Helmet>
         {cartItems.length === 0 ? 
         <Empty />
         :

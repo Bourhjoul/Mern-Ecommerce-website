@@ -62,7 +62,9 @@
     "loose-envify": "^1.4.0",
     "minimist": "^1.2.5",
     "mongoose": "^5.12.2",
+    "morgan": "^1.10.0",
     "ms": "^2.1.2",
+    "multer": "^1.4.2",
     "node-releases": "^1.1.71",
     "object-assign": "^4.1.1",
     "parent-module": "^1.0.1",
@@ -107,7 +109,8 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": " ABDESSAMAD BOURHJOUL & SOUHAIL OUABOU & SOUFIAN ZAAM",
   "license": "MIT",

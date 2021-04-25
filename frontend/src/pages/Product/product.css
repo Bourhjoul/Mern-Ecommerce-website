@@ -47,8 +47,38 @@
 .product-content {
   padding: 2rem 1rem;
 }
+.REVIEWS {
+  margin: 40px;
+}
+.REVIEWS h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0px;
+}
+.review h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px;
+}
+.commentreview {
+  margin: 8px;
+}
+
+.datereview,
+.Ratingreview {
+  justify-self: end;
+  margin: 8px;
+}
+.review {
+  display: grid;
+  height: 100px;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(243, 243, 243);
+  border-bottom: #12263a 2px solid;
+  margin: 0px 5px;
+}
 .product-title {
-  font-size: 3rem;
+  font-size: 40px;
   text-transform: capitalize;
   font-weight: 700;
   position: relative;

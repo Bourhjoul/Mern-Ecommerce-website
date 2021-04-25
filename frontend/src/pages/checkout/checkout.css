@@ -1,0 +1,130 @@
+/*CHECK OUT */
+.detailsdisable {
+  /* display: none; */
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s linear;
+  display: none;
+}
+.detailsenable {
+  height: fit-content;
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+.info-check {
+  margin: 15px 30px;
+  margin-top: 120px;
+  height: 450px;
+  display: grid;
+  grid-gap: 10px;
+
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(1fr, 50px));
+  row-gap: 8px;
+
+  background-color: #f3f3f3d7;
+  justify-items: center;
+  padding: 30px;
+  height: auto;
+}
+.billing-check {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+.payment-check {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+.your-products {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+.info-check h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.city-cp-check {
+  display: flex;
+}
+.exp-ye-cvv-check {
+  display: flex;
+}
+.accept-cards-imgs {
+  display: flex;
+}
+.accept-cards-imgs img {
+  height: 25px;
+  width: 40px;
+}
+
+.this-label {
+  display: inline-block;
+  margin-top: 20px;
+}
+.info-check input[type="radio"] {
+  margin-right: 10px;
+}
+.confirm {
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+.confirm-check {
+  /* margin: 20px; */
+  display: block;
+  width: 80%;
+
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #646f92, #403985, #241fac);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.your-products h1 {
+  display: flex;
+}
+
+.cart-summ {
+  display: inline-block;
+  border: 1px solid black;
+  width: 400px;
+  padding: 10px 20px;
+}
+
+.cart-summ p {
+  padding: 7px 0;
+  border-bottom: 1px solid black;
+}
+
+.cart-summ b {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* MEDIA QUERIS SCREEN 768px */
+@media screen and (max-width: 768px) {
+  .info-check {
+    display: block;
+    padding: 10px 20px;
+  }
+}

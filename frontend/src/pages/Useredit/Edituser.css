@@ -1,0 +1,23 @@
+.Edituser {
+  display: flex;
+  position: relative;
+  height: max-content;
+  top: 80px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.formedit {
+  width: max-content;
+  border-top: 2px black solid;
+  padding: 20px;
+}
+.input-div.zz {
+  margin: 20px;
+}
+.input-div.one {
+  margin: 20px;
+}
+.input-div.pass {
+  margin: 20px;
+}

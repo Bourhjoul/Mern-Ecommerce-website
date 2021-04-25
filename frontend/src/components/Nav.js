@@ -1,12 +1,15 @@
 import React , {useRef,useState,useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
+import { Route } from 'react-router-dom';
 import {Link, NavLink } from 'react-router-dom'
-import { Input,InputGroup,InputRightElement} from "@chakra-ui/react"
-import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight,IoLogOutOutline,CgProfile} from "react-icons/all"
+import { Button, Input,InputGroup,InputRightElement, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
+import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight,IoLogOutOutline,CgProfile, IoChevronDownCircleOutline, IoMdArrowDropdown} from "react-icons/all"
 
 import {logout} from '../actions/userActions'
+import { keyword } from 'color-convert'
+import Searchnav from './Searchnav';
 
- const Nav = () => {
+ const Nav = ({history}) => {
     const [incart,setincart] = useState(0);
     const cart = useSelector(state => state.cart)
     const {cartItems} = cart
@@ -23,6 +26,10 @@ import {logout} from '../actions/userActions'
      const rightItems = useRef(null)
      //signin
      const [signin,setSignin] = useState(null)
+
+
+
+
 
      const onSeacrhFun= () =>
         {
@@ -71,16 +78,14 @@ import {logout} from '../actions/userActions'
             else  setNav(false)
         }
         window.addEventListener('scroll',onChangeBack)
-        const Handlesearch = () => {
-            console.log('searched')
-        }
+
         useEffect(() => {
             const cart = cartItems.length ? cartItems.length : 0 ;
             setincart(cart);
             return () => {
-                
+                setincart(0)
             }
-        },)
+        },[cart])
 
 
         const dispatch= useDispatch()
@@ -93,7 +98,7 @@ import {logout} from '../actions/userActions'
     
     return (
        <nav ref = {Nav}  className={`nav ${nav ? 'active' : ''}`} >
-           <div className="logo">Logo</div>
+           <div className="logo"><Link to =''>EAST CLOTHING</Link></div>
             <ul className="navLinks" ref= {navLinks}>
                 <NavLink to="/" exact  activeClassName='activlink' ><li>Home</li></NavLink>
                 <NavLink to="/shop" activeClassName='activlink' ><li>Shop</li></NavLink>
@@ -106,18 +111,21 @@ import {logout} from '../actions/userActions'
                 <div className='line3'></div>
             </div>
         <div className = "rightComp" ref = {rightItems}>
-                            
-            <div  ref={searchRef} className="search">
-                <InputGroup >            
-                    <Input bgColor='white' placeholder='Search here ...'  onKeyPress = {Handlesearch} ></Input>
-                    <InputRightElement children={ <IoCloseOutline onClick = {onDelSeacrh}/>} />
-                </InputGroup>  
-            </div>
+        <div  ref={searchRef} className="search">
+        <Route render={({history}) => <Searchnav history ={history}/>}/>
+
+        </div>
+
+
                 { !showSearchIc && <MdSearch className='iconSearch' size='26' onClick={onSeacrhFun}/>  }
-                <Link to='/cart' > <RiShoppingCart2Line className='iconCart' size='26' /> 
-                <div className = 'dotcart'>
-                              {incart}   
-                            </div> </Link>
+                <Link to='/cart' > <RiShoppingCart2Line className='iconCart' size='26' />
+                {userInfo && !userInfo.isAdmin && 
+                <div className='dotcart'>
+                    {incart}
+                </div>
+                }
+
+                 </Link>
 
                             {userInfo ? (<div className="ic_sett_dis"><Link to="/profile"><CgProfile size="25" className="settingIcon"/></Link>
                                 <IoLogOutOutline size='28' className="displayIcon" onClick={logoutHandler}/>
@@ -125,8 +133,34 @@ import {logout} from '../actions/userActions'
                                 
                             ) : <Link to='/login' > <div className='signin' onMouseOver={ () => setSignin(!signin)}  onMouseOut={ ()=> setSignin(!signin) }  > Sign in 
                             { !signin ? <BsArrowRightShort  size='25'/>  : <MdKeyboardArrowRight size='25'  /> }
+
                         </div>
                         </Link>}
+                        {userInfo && userInfo.isAdmin && (
+                            <Menu>
+                                  <MenuButton as = {Button}  rightIcon={<IoMdArrowDropdown />}>
+                                      Admin
+                                  </MenuButton>
+                                  <MenuList>
+                                  <MenuItem>
+                                  <Link to = '/admin/userlist'>
+                                        Users
+                                     </Link>
+                                  </MenuItem>
+                                  <MenuItem>
+                                  <Link to = '/admin/productlist'>
+                                        Products
+                                  </Link>
+                                  </MenuItem>
+                                  <MenuItem>
+                                  <Link to = '/admin/orderlist'>
+                                        Orders
+                                  </Link>
+                                  </MenuItem>
+                                  </MenuList>
+
+                            </Menu>
+                        )}
             
         </div>
        </nav>

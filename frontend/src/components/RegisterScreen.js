@@ -4,6 +4,7 @@ import {Form, Image} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import avatarRegister from './img/avatarRegister.svg'
 import login from '../actions/userActions'
+import { Helmet } from 'react-helmet';
 import addUs from './img/new.svg'
 import wave from './img/wavev.png'
 import {register} from '../actions/userActions'
@@ -72,6 +73,11 @@ const RegisterScreen = ({location, history}) => {
 
     return (
         <div className="registerSc">
+          <Helmet>
+            <title>
+              Register
+            </title>
+          </Helmet>
           	<Image className="wave" src={wave} />
 
             <div className="containera">

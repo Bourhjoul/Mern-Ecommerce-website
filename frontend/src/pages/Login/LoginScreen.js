@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import { Helmet } from 'react-helmet';
+
 import {Form, Image} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import {BsArrowRight} from "react-icons/all"
@@ -62,6 +64,10 @@ const LoginScreen = ({location, history}) => {
 
     return (
         <div>
+          <Helmet>
+            <title>Login</title>
+
+          </Helmet>
           	<Image className="wave" src={wave} />
 
             <div className="containera">

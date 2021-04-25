@@ -10,10 +10,10 @@ const Footer = () => {
                 <div className="footerCategorie">
                     <h1>Categories</h1>
                     <ul>
-                        <li>Women</li>
-                        <li>Men</li>
-                        <li>Shoes</li>
-                        <li>Watches</li>
+                        <li><Link to = '/shop/?cg=Women'>Women</Link></li>
+                        <li><Link to = '/shop/?cg=Men'>Men</Link></li>
+                        <li><Link to = '/shop/?cg=Shoes'>Shoes</Link></li>
+                        <li><Link to = '/shop/?cg=Watches'>Watches</Link></li>
                     </ul>
                 </div>
 
@@ -68,9 +68,9 @@ const Footer = () => {
                 </div>
                 
                 <div className="paragraphFooter"><p>Copyright ©2021 All rights reserved | This template is made with ♡ by Developers of ESTO</p>
-                <Link >Abdessamad bourhjoul</Link>
-                <Link >Soufian zaam</Link>
-                <Link >Souhail ouabou</Link>
+                <Link to = '' >Abdessamad bourhjoul</Link>
+                <Link to = ''  >Soufian zaam</Link>
+                <Link to = ''  >Souhail ouabou</Link>
                 </div>
 
 

@@ -1,14 +1,20 @@
 import React, {useEffect,useState,useRef} from 'react'
 import Rating from '../../components/Rating'
 import {useDispatch, useSelector } from 'react-redux'
-import {listProductDetails} from '../../actions/productActions'
+import { Helmet } from 'react-helmet';
+
+import {listProductDetails,createproductReview} from '../../actions/productActions'
 import {IoLogoFacebook,AiFillTwitterCircle,AiFillInstagram,AiFillShop,MdDoNotDisturb}  from "react-icons/all"
-import { Image,Select,Button } from "@chakra-ui/react"
+import { Image,Select,Button, FormControl, FormLabel, Textarea } from "@chakra-ui/react"
 import HashLoader from "react-spinners/HashLoader";
+import {PRODUCT_CREATE_RESET, PRODUCT_CREATE_REVIEW_RESET} from '../../constants/productConstants'
 import  './product.css'
 import { Link } from 'react-router-dom'
 const Productpage = ({history,match}) => {
    const [qty, setQty] = useState(1)
+   const [rating, setrating] = useState(0)
+   const [comment,setcomment] = useState('')
+
    const imgs = document.querySelectorAll('.img-select a');
    const imgShowcase = useRef(null);
    const imgBtns = [...imgs];
@@ -16,8 +22,10 @@ const Productpage = ({history,match}) => {
    const dispatch = useDispatch()
    const productDetails = useSelector(state => state.productDetails)
    const {loading,error,product} = productDetails
-
-  //backend
+   const userLogin = useSelector(state => state.userLogin)
+   const {userInfo} = userLogin
+   const productReviewCreate = useSelector(state => state.productReviewCreate)
+   const {success:successProductReview,error:errorProductReview,} = productReviewCreate
 
 
  imgBtns.forEach((imgItem) => {
@@ -37,20 +45,41 @@ function slideImage(){
 
 
 useEffect(()=>{
+  if(successProductReview){
+    alert('Review Submitted!')
+    setrating(0)
+    setcomment('')
+    dispatch({type : PRODUCT_CREATE_REVIEW_RESET})
+
+  }
   dispatch(listProductDetails(match.params.id))
 
 }
-,[dispatch,match])
+,[dispatch,match,successProductReview])
 
+const submithanlder = () =>{
+  dispatch(createproductReview(match.params.id,
+    {
+      rating,
+      comment
+
+    }
+  ))
+}
   //Handler of button add to cart
   const addToCartHandler = () =>{
     history.push(`/cart/${match.params.id}?qty=${qty}`)
   }
     return (
+      <>
+      <Helmet>
+      <title>{product.name}</title>
+      </Helmet>
         <div className = 'productpage'>
           {loading ?  <div className='loading-product'>
                           <HashLoader   color={"#1e1e2c"}  loading={loading} size={50} />
                      </div>  : error ?  <h2>{error} </h2>  : 
+
      <div className = "card-wrapper">
       <div className = "card">
         <div className = "product-imgs">
@@ -108,21 +137,11 @@ useEffect(()=>{
             <p>{product.description}</p>
            <div>
            <ul>
-             <li>Color</li> <Select  className='select-product' placeholder="Choose an option">
-                                    <option value="option1">Red</option>
-                                    <option value="option2">Blue</option>
-                                    <option value="option3">White</option>
-                                    <option value="option3">Grey</option>
-                                </Select>
-           </ul>
-           </div>
-           <div>
-           <ul>
              <li>Size</li> <Select  className='select-product' placeholder="Choose an option">
-                                    <option value="option1">Red</option>
-                                    <option value="option2">Blue</option>
-                                    <option value="option3">White</option>
-                                    <option value="option3">Grey</option>
+               {product.sizes.map(size =>(
+                                    <option value={size}>{size}</option>
+
+               ))}
                                 </Select>
            </ul>
            </div>
@@ -168,9 +187,59 @@ useEffect(()=>{
           </div>
         </div>
       </div>
+
     </div>
     }
+      <div className ='REVIEWS'>
+        <h1>Reviews :</h1>
+        {product.reviews.length === 0 && <h2>NO REVIEWS</h2>}
+        <div>
+          {product.reviews.map(review =>(
+            <div className='review'>
+              <h4>{review.name}</h4>
+              <div className = 'Ratingreview'>
+              <Rating value={review.rating}/>
+
+              </div>
+              <p className ='commentreview'>{review.comment}</p>
+              <p className ='datereview'>{review.createdAt.substring(0,10)}</p>
+
+            </div>
+
+          ))}
+              <div className ='createreview'>
+              <h1>Create New Review :</h1>
+              {errorProductReview && <h2>{errorProductReview}</h2>}
+              {userInfo ? (
+              <FormControl>
+              <FormLabel>Rating :</FormLabel>
+              <Select onChange = {(e)=> setrating(e.target.value)} >
+              <option value='1'>1 POOR</option>
+              <option value='2'>2 FAIR</option>
+              <option value='3'>3 GOOD</option>
+              <option value='4'>4 VERY GOOD</option>
+              <option value='5'>5 EXCELLENT</option>
+              </Select>
+              <FormLabel>Comment :</FormLabel>
+              <Textarea onChange = {(e)=> setcomment(e.target.value)} placeholder = 'Leave Comment here :'/>
+              <Button colorScheme ='blue' onClick = {submithanlder}>Submit</Button>
+
+
+            </FormControl>
+            
+              ) :
+              <>
+              Please <Link to = '/login'>Sign In</Link> To write a review.
+              </>
+              
+              }
+
+              </div>
         </div>
+      </div>
+        </div>
+        </>
+
     )
     
 }

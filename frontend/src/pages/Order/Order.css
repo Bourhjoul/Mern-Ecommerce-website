@@ -1,0 +1,28 @@
+.orderid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.hr {
+  border-bottom: 2px rgb(163, 163, 163) solid;
+  width: 300px;
+}
+.paid {
+  color: rgb(29, 223, 45);
+  font-weight: 800;
+}
+.notpaid {
+  color: brown;
+  font-weight: 800;
+}
+.paypalbuttons {
+  margin-top: 12px;
+  z-index: -2;
+  width: 400px;
+}
+.buttonsp {
+  z-index: -2;
+}
+.bottominfos {
+  width: max-content;
+  height: max-content;
+}

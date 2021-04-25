@@ -1,4 +1,5 @@
 import React,{useRef,useEffect, useState} from 'react'
+import { Helmet } from 'react-helmet';
 import {Image} from '@chakra-ui/react'
 import HashLoader from "react-spinners/HashLoader";
 import './aboutcss.css'
@@ -6,11 +7,9 @@ const About = () => {
     const Line = useRef(null);
     const text = useRef(null);
     useEffect(() => {
-
-
-            setTimeout(() =>{
-            Line.current.classList.add('lineon');
-            text.current.classList.add('titleon');
+                setTimeout(() =>{
+        Line.current.classList.add('lineon')
+        text.current.classList.add('titleon');
         },5)
 
 
@@ -23,8 +22,11 @@ const About = () => {
 
         
         <>
+        <Helmet>
+            <title>About</title>
+        </Helmet>
 
-            <>
+
             <div className='headingA'>
                 <div className = 'line' ref={Line}>
                 </div>
@@ -68,7 +70,6 @@ const About = () => {
                    Est exercitation laboris Lorem sint Lorem id aute excepteur sint cupidatat. Et enim minim aliqua cillum sint elit consectetur. Voluptate tempor et velit ullamco consequat enim ipsum cupidatat laboris sunt excepteur. Nostrud mollit nulla labore irure tempor eiusmod. Tempor ut voluptate amet elit quis do ex nostrud minim proident veniam nulla non esse.</p>
                 </div>
             </div>
-            </>
         </>
     
     )

@@ -1,0 +1,77 @@
+.placeorder {
+  margin: 15px 30px;
+  margin-top: 80px;
+  height: 450px;
+
+  display: grid;
+  grid-template-columns: repeat(autofit, minmax(50%, 1fr));
+
+  row-gap: 8px;
+  padding: 30px;
+  height: auto;
+}
+.informations-placeorder {
+  background-color: rgba(248, 248, 248, 0.25);
+  width: 100%;
+  padding-left: 20px;
+}
+.informations-placeorder h2 {
+  margin: 15px 0;
+  font-size: 30px;
+  font-weight: 200;
+}
+.informations-placeorder p {
+  margin-bottom: 25px;
+}
+
+.orders-placeorder p b {
+  display: flex;
+  justify-content: flex-end;
+}
+.calculs-placeorder p {
+  display: flex;
+  justify-content: flex-end;
+}
+.div-placeorder-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.calculs-placeorder h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.cart-summ {
+  background-color: #fafafa;
+}
+.cart-summ h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+.placeorder-btn {
+  display: block;
+  width: 50%;
+
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #646f92, #403985, #241fac);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+.colors-name {
+  color: blue;
+}
+
+@media screen and (max-width: 768px) {
+  .placeorder {
+    display: block;
+  }
+}
