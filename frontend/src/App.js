@@ -36,8 +36,8 @@ import Orders from './pages/Orders/Orders'
   }, [])
 
   return (
-   
-     <ChakraProvider>
+    <div className = 'main'>
+<ChakraProvider>
        <Router>
          <ScrollIntoView>
          {loading ?   
@@ -82,6 +82,8 @@ import Orders from './pages/Orders/Orders'
         </ScrollIntoView>
       </Router>
    </ChakraProvider>
+    </div>
+     
     
   )
 }

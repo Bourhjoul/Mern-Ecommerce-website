@@ -161,7 +161,6 @@ nav {
 .slider {
   position: relative;
   height: 700px;
-  width: 100%;
 }
 .slide {
   position: absolute;
@@ -645,7 +644,7 @@ nav {
   }
 }
 @media screen and (max-width: 768px) {
-  body {
+  .main {
     overflow-x: hidden;
   }
   nav {
@@ -716,7 +715,7 @@ nav {
     bottom: 200px;
   }
   .logo {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     display: flex;
     margin: 0;
@@ -738,8 +737,8 @@ nav {
   }
   .burger {
     position: absolute;
-    right: 0;
-    margin-right: 12px;
+    right: 0px;
+    /* margin-right: 12px; */
     display: inline-block;
   }
   .cardsProduct {
