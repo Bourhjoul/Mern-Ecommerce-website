@@ -15,7 +15,7 @@
  5. Chakra Ui  
  6. Redux  
 
-Here is a Demo : [Demo](https://repos-trending.netlify.app/)
+Here is a Demo : [Demo](https://eastclothing.herokuapp.com/)
 
 If you are logged in as an admin a button in navbar will show up which gives you controll on your products,users and orders.
 
