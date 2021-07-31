@@ -69,7 +69,7 @@
     "object-assign": "^4.1.1",
     "parent-module": "^1.0.1",
     "parse-json": "^5.2.0",
-    "path-parse": "^1.0.6",
+    "path-parse": "^1.0.7",
     "path-type": "^4.0.0",
     "popmotion": "^9.2.1",
     "prop-types": "^15.7.2",
