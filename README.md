@@ -17,6 +17,12 @@
 
 Here is a Demo : [Demo](https://eastclothing.herokuapp.com/)
 
+To import sample user and products Run:
+node backend/seeder
+
+TO delete sample user and products Run:
+node backend/seeder -d
+
 If you are logged in as an admin a button in navbar will show up which gives you controll on your products,users and orders.
 
 - The button :
