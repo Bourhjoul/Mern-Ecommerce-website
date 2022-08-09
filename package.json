@@ -37,7 +37,7 @@
     "express-async-handler": "^1.1.4",
     "find-root": "^1.1.0",
     "focus-lock": "^0.8.1",
-    "framer-motion": "^3.7.0",
+    "framer-motion": "^3.10.6",
     "framesync": "^5.1.0",
     "function-bind": "^1.1.1",
     "gensync": "^1.0.0-beta.2",
