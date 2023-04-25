@@ -21,7 +21,7 @@
     "concurrently": "^6.0.0",
     "convert-source-map": "^1.7.0",
     "copy-to-clipboard": "^3.3.1",
-    "cosmiconfig": "^6.0.0",
+    "cosmiconfig": "^8.0.0",
     "css-box-model": "^1.2.1",
     "css-get-unit": "^1.0.1",
     "csstype": "^3.0.7",
@@ -101,7 +101,7 @@
     "use-callback-ref": "^1.2.5",
     "use-sidecar": "^1.0.4",
     "warning": "^4.0.3",
-    "yaml": "^1.10.0"
+    "yaml": "^2.2.2"
   },
   "scripts": {
     "start": "node backend/server",
