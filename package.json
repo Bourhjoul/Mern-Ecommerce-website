@@ -89,7 +89,7 @@
     "safe-buffer": "^5.1.2",
     "scheduler": "^0.20.1",
     "semver": "^6.3.0",
-    "source-map": "^0.5.7",
+    "source-map": "^0.7.3",
     "style-value-types": "^4.0.3",
     "stylis": "^4.0.7",
     "supports-color": "^5.5.0",
