@@ -6,7 +6,7 @@
   "dependencies": {
     "ansi-styles": "^3.2.1",
     "aria-hidden": "^1.1.2",
-    "axios": "^0.21.1",
+    "axios": "^0.30.0",
     "babel-plugin-macros": "^2.8.0",
     "bcryptjs": "^2.4.3",
     "browserslist": "^4.16.3",
