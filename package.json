@@ -64,7 +64,7 @@
     "mongoose": "^5.12.2",
     "morgan": "^1.10.0",
     "ms": "^2.1.2",
-    "multer": "^1.4.2",
+    "multer": "^2.0.0",
     "node-releases": "^1.1.71",
     "object-assign": "^4.1.1",
     "parent-module": "^1.0.1",
